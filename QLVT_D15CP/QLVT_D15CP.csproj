@@ -40,6 +40,9 @@
     <Reference Include="DevExpress.XtraBars.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v17.1" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,17 +55,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DS.cs">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_DSPM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DSPM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmDonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmDonDatHang.Designer.cs">
+      <DependentUpon>frmDonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKho.Designer.cs">
+      <DependentUpon>frmKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuNhap.Designer.cs">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuXuat.Designer.cs">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaoTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoTK.Designer.cs">
+      <DependentUpon>frmTaoTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVattu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVattu.Designer.cs">
+      <DependentUpon>frmVattu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDonDatHang.resx">
+      <DependentUpon>frmDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKho.resx">
+      <DependentUpon>frmKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuNhap.resx">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuXuat.resx">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoTK.resx">
+      <DependentUpon>frmTaoTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVattu.resx">
+      <DependentUpon>frmVattu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -71,7 +160,31 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="DS.xsc">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </None>
+    <None Include="DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS.xss">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DSPM.xsc">
+      <DependentUpon>DS_DSPM.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DSPM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DSPM.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_DSPM.xss">
+      <DependentUpon>DS_DSPM.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +194,189 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Actions-list-add-user-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Apps-Dialog-Logout-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Apps-session-Exit-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Backup-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Backup-48-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Business-Department-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Business-Department-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Button-Add-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Button-Refresh-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Button-Refresh-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\check-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\check-48-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Check-icon24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Check-icon48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Delete-2-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Diploma-Certificate-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Diploma-Certificate-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Excel-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Excel-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Excel-48-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Exit-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\folder-flower-blue-CVDI-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\folder-flower-pink-CVDEN-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\form-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-add-property-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-add-to-collection-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-add-to-collection-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-big-parcel-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-contact-details-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-delete-document-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-factory-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-file-delivery-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-icons8-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-queue-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-queue-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-shipping-product-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Keyboard-48-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Login-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Login-48-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Money-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Money-48-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\price-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\report-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\report-48-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Save-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Save-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Science-Classroom-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Science-Classroom-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Search-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Search-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\secrecy-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\secrecy-icon-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\sum-32-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Teacher-male-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Teacher-male-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Text-Edit-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Text-Edit-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Undo-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Undo-icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-exit-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icons8-password-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
