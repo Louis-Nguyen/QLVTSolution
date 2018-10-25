@@ -315,7 +315,7 @@ namespace QLVT_D15CP
             string TempTEN = txtTEN.Text.Trim();
             DateTime TempNGAYSINH = txtNGAYSINH.DateTime;
             string TempDIACHI = txtDIACHI.Text.Trim();
-            int TempLUONG = int.Parse(txtLUONG.Text.Trim());
+            float TempLUONG = float.Parse(txtLUONG.Text.Trim());
             string TempCN = "";
             int MaNVRandom=0;
             // Kiểm tra nhân viên đã xóa .Xóa rồi thì không thể chuyển chi nhánh.
@@ -402,7 +402,7 @@ namespace QLVT_D15CP
                //string str = DateTime.Parse(txtNGAYSINH.Text).ToString();
                // DateTime date = DateTime.ParseExact(str, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                // var date = dt.ToString("yyyy-MM-dd");
-                string strLenhThemnv = "DECLARE @return_value int EXEC @return_value = [dbo].[SP_TAONHANVIENSITEKHAC] @MANV ="+ MaNVRandom +" , @HO = N'"+TempHO+"', @TEN = N'"+TempTEN+"', @DIACHI = N'"+TempDIACHI+"', @NGAYSINH = " + TempNGAYSINH + " , @LUONG = "+TempLUONG+", @MACN = N'"+TempCN+"' SELECT  'Return Value' = @return_value";
+                string strLenhThemnv = "EXEC SP_TAONHANVIENSITEKHAC " + MaNVRandom + ", N'" + TempHO + "', N'" + TempTEN + "', N'" + TempDIACHI + "', N'" + TempNGAYSINH + "', " + TempLUONG + ", N'"+ TempCN + "'";
                 Program.ExecSqlDataReader(strLenhThemnv);
                 this.nhanVienTableAdapter.Fill(this.dS.NhanVien);
             }

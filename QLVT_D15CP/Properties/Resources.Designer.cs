@@ -163,6 +163,16 @@ namespace QLVT_D15CP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_Add_24_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Button-Add-24-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_Refresh_icon_24 {
             get {
                 object obj = ResourceManager.GetObject("Button-Refresh-icon-24", resourceCulture);
@@ -193,6 +203,16 @@ namespace QLVT_D15CP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check_32_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("check-32-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check_48_icon {
             get {
                 object obj = ResourceManager.GetObject("check-48-icon", resourceCulture);
@@ -213,6 +233,16 @@ namespace QLVT_D15CP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Check_icon241 {
+            get {
+                object obj = ResourceManager.GetObject("Check-icon241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Check_icon48 {
             get {
                 object obj = ResourceManager.GetObject("Check-icon48", resourceCulture);
@@ -226,6 +256,26 @@ namespace QLVT_D15CP.Properties {
         internal static System.Drawing.Bitmap Delete_2_icon_24 {
             get {
                 object obj = ResourceManager.GetObject("Delete-2-icon-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_2_icon_241 {
+            get {
+                object obj = ResourceManager.GetObject("Delete-2-icon-241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_2_icon_242 {
+            get {
+                object obj = ResourceManager.GetObject("Delete-2-icon-242", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +416,16 @@ namespace QLVT_D15CP.Properties {
         internal static System.Drawing.Bitmap icons8_add_property_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-property-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_property_241 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-property-241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

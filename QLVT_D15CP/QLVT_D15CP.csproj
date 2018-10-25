@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DSPM.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmCTDDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCTDDH.Designer.cs">
+      <DependentUpon>frmCTDDH.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCTDDH.resx">
+      <DependentUpon>frmCTDDH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
