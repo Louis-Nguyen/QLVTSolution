@@ -57,11 +57,11 @@ namespace QLVT_D15CP
                     {
                         thanhtien += int.Parse(tblChiTietDDH.Rows[i].Cells[4].Value.ToString());
                     }
-                    txtTongTien.Text = thanhtien.ToString();
+                    txtTongtien.Text = thanhtien.ToString();
                 }
                 else
                 {
-                    txtTongTien.Text = "0";
+                    txtTongtien.Text = "0";
                 }
             }
             catch (Exception)
@@ -79,8 +79,10 @@ namespace QLVT_D15CP
             cmbMAKHO.ValueMember = "MAKHO";
             cmbMAKHO.DisplayMember = "TENKHO";
         }
+
         private void frmCTDDH_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.PhieuNhap' table. You can move, or remove it, as needed.
             dS.EnforceConstraints = false;
             this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS.CTDDH' table. You can move, or remove it, as needed.
@@ -91,6 +93,10 @@ namespace QLVT_D15CP
             this.LoadDataToComboBox2();
             bdsDDH.AddNew();
             txtMSDDHCT.Focus();
+            txtMANVCT.Text = Program.username;
+            txtMANVCT.Enabled = false;
+            txtNGAYCT.DateTime = DateTime.Now;
+            txtNGAYCT.Enabled = false;
         }
 
         private void cmbMAKHO_SelectedIndexChanged(object sender, EventArgs e)
@@ -224,9 +230,27 @@ namespace QLVT_D15CP
             string ma = txtMSDDHCT.Text;
             SqlDataReader myReader;
             SqlDataReader myReader1;
+            SqlDataReader myReaderKT;
             string maNhanVien = Program.username;
             string nhaCungCap = txtNHACCCT.Text;
             string maKho = cmbMAKHO.SelectedValue.ToString();
+            if (ma.Trim().Equals(""))
+            {
+                MessageBox.Show("Mã số đơn đặt hàng không được trống !");
+                txtMSDDHCT.Focus();
+                return;
+            }
+            String strLenhKT = "DECLARE	@return_value int EXEC @return_value = [dbo].[SP_KIEMTRADDHTONTAI] @MADDH = N'"+ txtMSDDHCT.Text.Trim() + "' SELECT  'Return Value' = @return_value";
+            myReaderKT = Program.ExecSqlDataReader(strLenhKT);
+            myReaderKT.Read();
+            int dem = myReaderKT.GetInt32(0);
+            myReaderKT.Close();
+            if (dem == 1)
+            {
+                MessageBox.Show("Mã đơn đặt hàng bị trùng.", "Lỗi thêm Đơn đặt hàng", MessageBoxButtons.OK);
+                txtMSDDHCT.Focus();
+                return;
+            }
             if (nhaCungCap.Trim().Equals(""))
             {
                 MessageBox.Show("Tên nhà cung cấp không được trống !");

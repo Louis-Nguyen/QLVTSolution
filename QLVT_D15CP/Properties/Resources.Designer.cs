@@ -173,6 +173,16 @@ namespace QLVT_D15CP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_Add_24_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("Button-Add-24-icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_Refresh_icon_24 {
             get {
                 object obj = ResourceManager.GetObject("Button-Refresh-icon-24", resourceCulture);
@@ -243,6 +253,16 @@ namespace QLVT_D15CP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Check_icon242 {
+            get {
+                object obj = ResourceManager.GetObject("Check-icon242", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Check_icon48 {
             get {
                 object obj = ResourceManager.GetObject("Check-icon48", resourceCulture);
@@ -276,6 +296,16 @@ namespace QLVT_D15CP.Properties {
         internal static System.Drawing.Bitmap Delete_2_icon_242 {
             get {
                 object obj = ResourceManager.GetObject("Delete-2-icon-242", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_2_icon_243 {
+            get {
+                object obj = ResourceManager.GetObject("Delete-2-icon-243", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

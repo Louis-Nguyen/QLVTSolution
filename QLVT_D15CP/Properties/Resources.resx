@@ -205,14 +205,14 @@
   <data name="Business-Department-32-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Business-Department-32-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Check-icon241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\Check-icon24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Exit-24-icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Exit-24-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Teacher-male-icon-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Teacher-male-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check-32-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\check-32-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-add-property-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-add-property-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +253,8 @@
   <data name="Apps-Dialog-Logout-icon-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Apps-Dialog-Logout-icon-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-shipping-product-641" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icons8-shipping-product-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-exit-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\icons8-exit-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exit-24-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Exit-24-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,8 +298,8 @@
   <data name="Science-Classroom-32-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Science-Classroom-32-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-exit-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icons8-exit-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check-32-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\check-32-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Excel-24-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Excel-24-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,8 +310,14 @@
   <data name="Login-48-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Login-48-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Button-Add-24-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\Button-Add-24-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="form-32-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\form-32-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-shipping-product-641" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\icons8-shipping-product-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button-Refresh-icon-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Button-Refresh-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -330,6 +336,9 @@
   </data>
   <data name="Save-icon-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Save-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Check-icon242" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\Check-icon24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Undo-icon-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\Undo-icon-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,7 +364,7 @@
   <data name="icons8-big-parcel-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icons8-big-parcel-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Check-icon241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\Check-icon24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete-2-icon-243" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\Delete-2-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

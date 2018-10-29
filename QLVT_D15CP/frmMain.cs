@@ -25,20 +25,20 @@ namespace QLVT_D15CP
         private void frmMain_Load(object sender, EventArgs e)
         {
 
-            //if (Program.mGroup == "USER")
-            //{
-            //    btnTaoLogin.Enabled = false;
-            //    btnTimNV.Enabled = false;
-            //    rbbBaoCao.Visible = false;
-            //    rbbInDS.Visible = false;
-            //}
-            //else
-            //{
-            //    btnTaoLogin.Enabled = true;
-            //    btnTimNV.Enabled = true;
-            //    rbbBaoCao.Visible = true;
-            //    rbbInDS.Visible = true;
-            //}
+            if (Program.mGroup == "USER")
+            {
+                btnTaoTK.Enabled = false;
+               // btnTimNV.Enabled = false;
+                //rbbBaoCao.Visible = false;
+                //rbbInDS.Visible = false;
+            }
+            else
+            {
+                btnTaoTK.Enabled = true;
+                //btnTimNV.Enabled = true;
+                //rbbBaoCao.Visible = true;
+                //rbbInDS.Visible = true;
+            }
         }
 
         private void btnNhanvien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

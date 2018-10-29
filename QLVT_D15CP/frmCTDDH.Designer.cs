@@ -43,8 +43,8 @@
             this.tableAdapterManager = new QLVT_D15CP.DSTableAdapters.TableAdapterManager();
             this.cTDDHTableAdapter = new QLVT_D15CP.DSTableAdapters.CTDDHTableAdapter();
             this.gbDDH = new System.Windows.Forms.GroupBox();
-            this.cmbMAKHO = new System.Windows.Forms.ComboBox();
             this.txtMANVCT = new System.Windows.Forms.TextBox();
+            this.cmbMAKHO = new System.Windows.Forms.ComboBox();
             this.txtNHACCCT = new System.Windows.Forms.TextBox();
             this.txtNGAYCT = new DevExpress.XtraEditors.DateEdit();
             this.txtMSDDHCT = new System.Windows.Forms.TextBox();
@@ -68,7 +68,7 @@
             this.txtSL = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.txtTongtien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tblChiTietDDH = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +76,7 @@
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phieuNhapTableAdapter = new QLVT_D15CP.DSTableAdapters.PhieuNhapTableAdapter();
             masoDDHLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
             nhaCCLabel = new System.Windows.Forms.Label();
@@ -126,20 +127,20 @@
             // mAKHOLabel
             // 
             mAKHOLabel.AutoSize = true;
-            mAKHOLabel.Location = new System.Drawing.Point(758, 67);
+            mAKHOLabel.Location = new System.Drawing.Point(808, 67);
             mAKHOLabel.Name = "mAKHOLabel";
-            mAKHOLabel.Size = new System.Drawing.Size(71, 21);
+            mAKHOLabel.Size = new System.Drawing.Size(46, 21);
             mAKHOLabel.TabIndex = 6;
-            mAKHOLabel.Text = "Mã kho:";
+            mAKHOLabel.Text = "Kho:";
             // 
             // mANVLabel
             // 
             mANVLabel.AutoSize = true;
             mANVLabel.Location = new System.Drawing.Point(441, 67);
             mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(113, 21);
+            mANVLabel.Size = new System.Drawing.Size(115, 21);
             mANVLabel.TabIndex = 8;
-            mANVLabel.Text = "Mã nhân viên:";
+            mANVLabel.Text = "Nhân viên lập:";
             // 
             // sOLUONGLabel
             // 
@@ -194,9 +195,9 @@
             // 
             // gbDDH
             // 
+            this.gbDDH.Controls.Add(this.txtMANVCT);
             this.gbDDH.Controls.Add(this.cmbMAKHO);
             this.gbDDH.Controls.Add(mANVLabel);
-            this.gbDDH.Controls.Add(this.txtMANVCT);
             this.gbDDH.Controls.Add(mAKHOLabel);
             this.gbDDH.Controls.Add(nhaCCLabel);
             this.gbDDH.Controls.Add(this.txtNHACCCT);
@@ -209,28 +210,27 @@
             this.gbDDH.Margin = new System.Windows.Forms.Padding(4);
             this.gbDDH.Name = "gbDDH";
             this.gbDDH.Padding = new System.Windows.Forms.Padding(4);
-            this.gbDDH.Size = new System.Drawing.Size(1172, 221);
+            this.gbDDH.Size = new System.Drawing.Size(1730, 221);
             this.gbDDH.TabIndex = 0;
             this.gbDDH.TabStop = false;
             this.gbDDH.Text = "Thông tin đơn đặt hàng";
+            // 
+            // txtMANVCT
+            // 
+            this.txtMANVCT.Location = new System.Drawing.Point(564, 64);
+            this.txtMANVCT.Name = "txtMANVCT";
+            this.txtMANVCT.Size = new System.Drawing.Size(168, 28);
+            this.txtMANVCT.TabIndex = 11;
             // 
             // cmbMAKHO
             // 
             this.cmbMAKHO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMAKHO.FormattingEnabled = true;
-            this.cmbMAKHO.Location = new System.Drawing.Point(836, 67);
+            this.cmbMAKHO.Location = new System.Drawing.Point(860, 64);
             this.cmbMAKHO.Name = "cmbMAKHO";
-            this.cmbMAKHO.Size = new System.Drawing.Size(242, 28);
+            this.cmbMAKHO.Size = new System.Drawing.Size(218, 28);
             this.cmbMAKHO.TabIndex = 10;
             this.cmbMAKHO.SelectedIndexChanged += new System.EventHandler(this.cmbMAKHO_SelectedIndexChanged);
-            // 
-            // txtMANVCT
-            // 
-            this.txtMANVCT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDDH, "MANV", true));
-            this.txtMANVCT.Location = new System.Drawing.Point(560, 64);
-            this.txtMANVCT.Name = "txtMANVCT";
-            this.txtMANVCT.Size = new System.Drawing.Size(137, 28);
-            this.txtMANVCT.TabIndex = 9;
             // 
             // txtNHACCCT
             // 
@@ -244,6 +244,7 @@
             // 
             this.txtNGAYCT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDDH, "NGAY", true));
             this.txtNGAYCT.EditValue = null;
+            this.txtNGAYCT.Enabled = false;
             this.txtNGAYCT.Location = new System.Drawing.Point(245, 127);
             this.txtNGAYCT.Name = "txtNGAYCT";
             this.txtNGAYCT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -314,15 +315,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1172, 59);
+            this.barDockControlTop.Size = new System.Drawing.Size(1730, 59);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 658);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 691);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1172, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1730, 0);
             // 
             // barDockControlLeft
             // 
@@ -330,15 +331,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 59);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 599);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 632);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1172, 59);
+            this.barDockControlRight.Location = new System.Drawing.Point(1730, 59);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 599);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 632);
             // 
             // applicationMenu1
             // 
@@ -450,12 +451,12 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Tổng tiền:";
             // 
-            // txtTongTien
+            // txtTongtien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(321, 601);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(174, 28);
-            this.txtTongTien.TabIndex = 13;
+            this.txtTongtien.Location = new System.Drawing.Point(321, 601);
+            this.txtTongtien.Name = "txtTongtien";
+            this.txtTongtien.Size = new System.Drawing.Size(174, 28);
+            this.txtTongtien.TabIndex = 13;
             // 
             // label3
             // 
@@ -516,14 +517,18 @@
             this.ThanhTien.Name = "ThanhTien";
             this.ThanhTien.ReadOnly = true;
             // 
+            // phieuNhapTableAdapter
+            // 
+            this.phieuNhapTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCTDDH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 658);
+            this.ClientSize = new System.Drawing.Size(1730, 691);
             this.Controls.Add(this.tblChiTietDDH);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtTongTien);
+            this.Controls.Add(this.txtTongtien);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gbCTDDH);
             this.Controls.Add(this.gbDDH);
@@ -562,7 +567,6 @@
         private DSTableAdapters.DatHangTableAdapter datHangTableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox gbDDH;
-        private System.Windows.Forms.TextBox txtMANVCT;
         private System.Windows.Forms.TextBox txtNHACCCT;
         private DevExpress.XtraEditors.DateEdit txtNGAYCT;
         private System.Windows.Forms.TextBox txtMSDDHCT;
@@ -589,12 +593,14 @@
         private System.Windows.Forms.Button btnThemCT;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.TextBox txtTongtien;
         private System.Windows.Forms.DataGridView tblChiTietDDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTu;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
+        private DSTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
+        private System.Windows.Forms.TextBox txtMANVCT;
     }
 }

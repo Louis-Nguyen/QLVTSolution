@@ -157,10 +157,53 @@ namespace QLVT_D15CP
 
         private void btnGhiNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (txtMANV.Text.Trim().Equals(""))
+            {
+                lbThongbao.Text = "Mã nhân viên không thể để trống.";
+                txtMANV.Focus();
+                return;
+            }
+
             if (int.Parse(txtMANV.Text) <= 0)
             {
                 lbThongbao.Text = "Mã nhân viên không thể là số âm hoặc 0.";
                 txtMANV.Focus();
+                return;
+            }
+            if (txtHO.Text.Trim().Equals(""))
+            {
+                lbThongbao.Text = "Họ nhân viên không thể để trống.";
+                txtHO.Focus();
+                return;
+            }
+            if (txtTEN.Text.Trim().Equals(""))
+            {
+                lbThongbao.Text = "Tên nhân viên không thể để trống.";
+                txtTEN.Focus();
+                return;
+            }
+            if (txtNGAYSINH.Text.Trim().Equals(""))
+            {
+                lbThongbao.Text = "Ngày sinh không thể để trống.";
+                txtNGAYSINH.Focus();
+                return;
+            }
+            if (txtLUONG.Text.Trim().Equals(""))
+            {
+                lbThongbao.Text = "Lương không thể để trống.";
+                txtLUONG.Focus();
+                return;
+            }
+            if (Int32.Parse(txtLUONG.Text) < 4000000)
+            {
+                lbThongbao.Text = "Lương Nhân viên không thể < 4000000 ";
+                txtLUONG.Focus();
+                return;
+            }
+            if (txtDIACHI.Text.Trim().Equals(""))
+            {
+                lbThongbao.Text = "Địa chỉ không thể để trống.";
+                txtDIACHI.Focus();
                 return;
             }
             if (supportGhi.Trim().Equals("them"))
@@ -193,37 +236,7 @@ namespace QLVT_D15CP
                     return;
                 }
             }
-            if (txtHO.Text.Trim().Equals(""))
-            {
-                lbThongbao.Text = "Họ nhân viên không thể để trống.";
-                txtHO.Focus();
-                return;
-
-            }
-            if (txtTEN.Text.Trim().Equals(""))
-            {
-                lbThongbao.Text = "Tên nhân viên không thể để trống.";
-                txtTEN.Focus();
-                return;
-            }
-            if (txtLUONG.Text.Trim().Equals(""))
-            {
-                lbThongbao.Text = "Lương không thể để trống.";
-                txtLUONG.Focus();
-                return;
-            }
-            if (Int32.Parse(txtLUONG.Text) < 4000000)
-            {
-                lbThongbao.Text = "Lương Nhân viên không thể < 4000000 ";
-                txtLUONG.Focus();
-                return;
-            }
-            if (txtDIACHI.Text.Trim().Equals(""))
-            {
-                lbThongbao.Text = "Địa chỉ không thể để trống.";
-                txtDIACHI.Focus();
-                return;
-            }
+            
             try
             {
 
@@ -394,25 +407,24 @@ namespace QLVT_D15CP
                     check = false;
                 }
             }
-           
+
             // thêm nhân viên mới vào site khác.
-            try
+            if (MessageBox.Show("Bạn chuyển chi nhánh cho nhân viên này ?? ", "Xác nhận",
+                      MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                try
+                {
+                    string strLenhThemnv = "EXEC SP_TAONHANVIENSITEKHAC " + MaNVRandom + ", N'" + TempHO + "', N'" + TempTEN + "', N'" + TempDIACHI + "', N'" + TempNGAYSINH + "', " + TempLUONG + ", N'" + TempCN + "'";
+                    Program.ExecSqlDataReader(strLenhThemnv);
+                    this.nhanVienTableAdapter.Fill(this.dS.NhanVien);
+                }
+                catch
+                {
+                    MessageBox.Show("Lỗi tạo nhân viên ở chi nhánh mới. Không thể chuyển nhân viên!", "Lỗi chuyển nhân viên", MessageBoxButtons.OK);
+                    return;
+                }
 
-               //string str = DateTime.Parse(txtNGAYSINH.Text).ToString();
-               // DateTime date = DateTime.ParseExact(str, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-               // var date = dt.ToString("yyyy-MM-dd");
-                string strLenhThemnv = "EXEC SP_TAONHANVIENSITEKHAC " + MaNVRandom + ", N'" + TempHO + "', N'" + TempTEN + "', N'" + TempDIACHI + "', N'" + TempNGAYSINH + "', " + TempLUONG + ", N'"+ TempCN + "'";
-                Program.ExecSqlDataReader(strLenhThemnv);
-                this.nhanVienTableAdapter.Fill(this.dS.NhanVien);
             }
-            catch
-            {
-                MessageBox.Show("Lỗi tạo nhân viên ở chi nhánh mới. Không thể chuyển nhân viên!", "Lỗi chuyển nhân viên", MessageBoxButtons.OK);
-                return;
-            }
-
-
         }
     }
 }

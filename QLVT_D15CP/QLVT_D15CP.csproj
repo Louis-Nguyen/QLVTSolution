@@ -74,6 +74,12 @@
     <Compile Include="frmCTDDH.Designer.cs">
       <DependentUpon>frmCTDDH.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCTPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCTPN.Designer.cs">
+      <DependentUpon>frmCTPN.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCTDDH.resx">
       <DependentUpon>frmCTDDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCTPN.resx">
+      <DependentUpon>frmCTPN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>

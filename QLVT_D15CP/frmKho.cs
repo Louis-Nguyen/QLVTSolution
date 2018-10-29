@@ -127,6 +127,18 @@ namespace QLVT_D15CP
                 return;
 
             }
+            if (txtTENKHO.Text.Trim().Equals(""))
+            {
+                lbThongbaoKho.Text = "Tên kho không thể để trống.";
+                txtTENKHO.Focus();
+                return;
+            }
+            if (txtDIACHI.Text.Trim().Equals(""))
+            {
+                lbThongbaoKho.Text = "Địa chỉ không thể để trống.";
+                txtDIACHI.Focus();
+                return;
+            }
             if (supportGhi.Trim().Equals("them"))
             {
                 string strLenh = "DECLARE @return_value int EXEC @return_value = [dbo].[SP_KIEMTRAKHOTONTAI] N'" + txtMAKHO.Text.Trim() + "' SELECT  'Return Value' = @return_value";
@@ -157,18 +169,7 @@ namespace QLVT_D15CP
                     return;
                 }
             }
-            if (txtTENKHO.Text.Trim().Equals(""))
-            {
-                lbThongbaoKho.Text = "Tên kho không thể để trống.";
-                txtTENKHO.Focus();
-                return;
-            }
-            if (txtDIACHI.Text.Trim().Equals(""))
-            {
-                lbThongbaoKho.Text = "Địa chỉ không thể để trống.";
-                txtDIACHI.Focus();
-                return;
-            }
+            
             try
             {
 
