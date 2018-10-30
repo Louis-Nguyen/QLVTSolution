@@ -80,6 +80,12 @@
     <Compile Include="frmCTPN.Designer.cs">
       <DependentUpon>frmCTPN.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCTPX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCTPX.Designer.cs">
+      <DependentUpon>frmCTPX.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCTPN.resx">
       <DependentUpon>frmCTPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCTPX.resx">
+      <DependentUpon>frmCTPX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>

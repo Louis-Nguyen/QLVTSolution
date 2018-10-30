@@ -66,7 +66,7 @@ namespace QLVT_D15CP
             }
             catch (Exception)
             {
-                MessageBox.Show("123");
+                MessageBox.Show("Lỗi tính tổng tiền");
             }
         }
        
@@ -85,6 +85,7 @@ namespace QLVT_D15CP
             // TODO: This line of code loads data into the 'dS.PhieuNhap' table. You can move, or remove it, as needed.
             dS.EnforceConstraints = false;
             this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS.CTDDH' table. You can move, or remove it, as needed.
             this.cTDDHTableAdapter.Fill(this.dS.CTDDH);
             // TODO: This line of code loads data into the 'dS.DatHang' table. You can move, or remove it, as needed.

@@ -346,7 +346,7 @@
             this.gbCTPN.Size = new System.Drawing.Size(486, 370);
             this.gbCTPN.TabIndex = 6;
             this.gbCTPN.TabStop = false;
-            this.gbCTPN.Text = "Thêm chi tiết phiếu nhập";
+            this.gbCTPN.Text = "Thông tin chi tiết phiếu nhập";
             // 
             // cmbVattu
             // 

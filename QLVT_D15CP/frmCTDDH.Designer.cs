@@ -71,12 +71,12 @@
             this.txtTongtien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tblChiTietDDH = new System.Windows.Forms.DataGridView();
+            this.phieuNhapTableAdapter = new QLVT_D15CP.DSTableAdapters.PhieuNhapTableAdapter();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenVatTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuNhapTableAdapter = new QLVT_D15CP.DSTableAdapters.PhieuNhapTableAdapter();
             masoDDHLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
             nhaCCLabel = new System.Windows.Forms.Label();
@@ -482,10 +482,14 @@
             this.tblChiTietDDH.TabIndex = 15;
             this.tblChiTietDDH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblChiTietDDH_CellContentClick);
             // 
+            // phieuNhapTableAdapter
+            // 
+            this.phieuNhapTableAdapter.ClearBeforeFill = true;
+            // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.STT.HeaderText = "STT";
+            this.STT.HeaderText = "Mã vật tư";
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
             // 
@@ -516,10 +520,6 @@
             this.ThanhTien.HeaderText = "Thành tiền";
             this.ThanhTien.Name = "ThanhTien";
             this.ThanhTien.ReadOnly = true;
-            // 
-            // phieuNhapTableAdapter
-            // 
-            this.phieuNhapTableAdapter.ClearBeforeFill = true;
             // 
             // frmCTDDH
             // 
@@ -595,12 +595,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTongtien;
         private System.Windows.Forms.DataGridView tblChiTietDDH;
+        private DSTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
+        private System.Windows.Forms.TextBox txtMANVCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTu;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private DSTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
-        private System.Windows.Forms.TextBox txtMANVCT;
     }
 }

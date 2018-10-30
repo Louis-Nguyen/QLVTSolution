@@ -21,7 +21,7 @@ namespace QLVT_D15CP
         {
             InitializeComponent();
             gbDDH.Enabled = false;
-            cTDDHGridControl.Enabled = false;
+            cTDDHDataGridView.Enabled = false;
         }
         private Form CheckExists(Type ftype)
         {
@@ -117,7 +117,7 @@ namespace QLVT_D15CP
             btnThemDDH.Enabled = btnSuaDDH.Enabled = btnRefreshDDH.Enabled = btnThoatDDH.Enabled = btnXoa.Enabled = false;
             btnGhiDDH.Enabled = btnUndoDDH.Enabled = true;
             gcDDH.Enabled = false;
-            cTDDHGridControl.Enabled = true;
+            cTDDHDataGridView.Enabled = true;
             txtNGAY.Focus();
             // kiểm tra đơn đặt hàng có trong phiếu nhập hay k. Nếu là phiếu mới thì cho sửa chi tiết đơn đặt hàng.
             string strLenh = "DECLARE @return_value int EXEC @return_value = [dbo].[SP_KIEMTRADDHCOTRONGPHIEUNHAP] N'" + txtMASODDH.Text.Trim() + "' SELECT  'Return Value' = @return_value";
@@ -128,7 +128,7 @@ namespace QLVT_D15CP
             myreader.Close();
             if (dem != 0)
             {
-                cTDDHGridControl.Enabled = false;
+                cTDDHDataGridView.Enabled = false;
             }
         }
 
@@ -173,7 +173,7 @@ namespace QLVT_D15CP
             }
             gcDDH.Enabled = true;
             gbDDH.Enabled = false;
-            cTDDHGridControl.Enabled = false;
+            cTDDHDataGridView.Enabled = false;
             btnThemDDH.Enabled = btnSuaDDH.Enabled = btnRefreshDDH.Enabled = btnThoatDDH.Enabled = btnXoa.Enabled = true;
             btnGhiDDH.Enabled = btnUndoDDH.Enabled = false;
         }
@@ -185,7 +185,7 @@ namespace QLVT_D15CP
             if (btnThemDDH.Enabled == false) bdsDathang.Position = vitri;
             gcDDH.Enabled = true;
             gbDDH.Enabled = false;
-            cTDDHGridControl.Enabled = false;
+            cTDDHDataGridView.Enabled = false;
             btnThemDDH.Enabled = btnSuaDDH.Enabled = btnRefreshDDH.Enabled = btnThoatDDH.Enabled = btnXoa.Enabled = true;
             btnGhiDDH.Enabled = btnUndoDDH.Enabled = false;
         }
@@ -255,10 +255,19 @@ namespace QLVT_D15CP
 
                     try
                     {
-                        
+                        int row = cTDDHDataGridView.Rows.Count;
+                        for (int i=0;i< row; i++)
+                        {
+                            cTDDHDataGridView.Rows.RemoveAt(0);
+                        }
                         bdsDathang.RemoveCurrent();
-                        this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.datHangTableAdapter.Update(this.dS.DatHang);
+                        if (dS.HasChanges())
+                        {
+                            this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+                            this.cTDDHTableAdapter.Update(this.dS.CTDDH);
+                            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+                            this.datHangTableAdapter.Update(this.dS.DatHang);
+                        }
                     }
                     catch (Exception ex)
                     {

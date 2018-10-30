@@ -96,7 +96,7 @@ namespace QLVT_D15CP
             }
             catch (Exception)
             {
-                MessageBox.Show("123");
+                MessageBox.Show("Lỗi tính tổng tiền");
             }
         }
         public void HienThi(string maDDH)
@@ -119,6 +119,7 @@ namespace QLVT_D15CP
         {
             dS.EnforceConstraints = false;
             this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS.CTPN' table. You can move, or remove it, as needed.
             this.cTPNTableAdapter.Fill(this.dS.CTPN);
             // TODO: This line of code loads data into the 'dS.PhieuNhap' table. You can move, or remove it, as needed.
@@ -282,7 +283,7 @@ namespace QLVT_D15CP
                         for (int i = 0; i < tblChiTietPN.Rows.Count ; i++)
                         {
                             String strLenh1 = "EXEC  SP_INSERTCTPN N'"
-                            + ma + "', N'" + tblChiTietPN.Rows[i].Cells[0].Value.ToString() + "'," + int.Parse(tblChiTietPN.Rows[i].Cells[3].Value.ToString()) + "," + int.Parse(tblChiTietPN.Rows[i].Cells[4].Value.ToString())  ;
+                            + ma + "', N'" + tblChiTietPN.Rows[i].Cells[0].Value.ToString() + "'," + int.Parse(tblChiTietPN.Rows[i].Cells[3].Value.ToString()) + "," + float.Parse(tblChiTietPN.Rows[i].Cells[4].Value.ToString())  ;
                             myReader1 = Program.ExecSqlDataReader(strLenh1);
                            
                             if (myReader1 != null)

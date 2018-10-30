@@ -78,11 +78,10 @@
             this.txtNGAYPN = new DevExpress.XtraEditors.DateEdit();
             this.txtMAPN = new System.Windows.Forms.TextBox();
             this.bdsCTPN = new System.Windows.Forms.BindingSource(this.components);
-            this.gcCTPN = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cTPNDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tENCNLabel = new System.Windows.Forms.Label();
             mAPNLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
@@ -101,8 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAYPN.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAYPN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTPN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCTPN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tENCNLabel
@@ -262,7 +260,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 762);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1166, 0);
             // 
@@ -272,7 +270,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 59);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 641);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 703);
             // 
             // barDockControlRight
             // 
@@ -280,7 +278,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1166, 59);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 641);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 703);
             // 
             // gbChinhanh
             // 
@@ -449,7 +447,7 @@
             this.gbPN.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbPN.Location = new System.Drawing.Point(0, 328);
             this.gbPN.Name = "gbPN";
-            this.gbPN.Size = new System.Drawing.Size(632, 372);
+            this.gbPN.Size = new System.Drawing.Size(632, 434);
             this.gbPN.TabIndex = 6;
             this.gbPN.TabStop = false;
             this.gbPN.Text = "Thông tin phiếu nhập";
@@ -545,59 +543,51 @@
             this.bdsCTPN.DataMember = "FK_CTPN_PhieuNhap";
             this.bdsCTPN.DataSource = this.bdsPN;
             // 
-            // gcCTPN
+            // cTPNDataGridView
             // 
-            this.gcCTPN.DataSource = this.bdsCTPN;
-            this.gcCTPN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcCTPN.Location = new System.Drawing.Point(632, 328);
-            this.gcCTPN.MainView = this.gridView2;
-            this.gcCTPN.MenuManager = this.barManager1;
-            this.gcCTPN.Name = "gcCTPN";
-            this.gcCTPN.Size = new System.Drawing.Size(534, 368);
-            this.gcCTPN.TabIndex = 7;
-            this.gcCTPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.cTPNDataGridView.AllowUserToAddRows = false;
+            this.cTPNDataGridView.AutoGenerateColumns = false;
+            this.cTPNDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cTPNDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.cTPNDataGridView.DataSource = this.bdsCTPN;
+            this.cTPNDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cTPNDataGridView.Location = new System.Drawing.Point(632, 328);
+            this.cTPNDataGridView.Name = "cTPNDataGridView";
+            this.cTPNDataGridView.RowTemplate.Height = 24;
+            this.cTPNDataGridView.Size = new System.Drawing.Size(534, 428);
+            this.cTPNDataGridView.TabIndex = 11;
             // 
-            // gridView2
+            // dataGridViewTextBoxColumn2
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAVT,
-            this.colSOLUONG,
-            this.colDONGIA});
-            this.gridView2.GridControl = this.gcCTPN;
-            this.gridView2.Name = "gridView2";
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MAVT";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mã vật tư";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // colMAVT
+            // dataGridViewTextBoxColumn3
             // 
-            this.colMAVT.Caption = "Mã vật tư";
-            this.colMAVT.FieldName = "MAVT";
-            this.colMAVT.Name = "colMAVT";
-            this.colMAVT.OptionsColumn.AllowEdit = false;
-            this.colMAVT.Visible = true;
-            this.colMAVT.VisibleIndex = 0;
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SOLUONG";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Số lượng";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // colSOLUONG
+            // dataGridViewTextBoxColumn4
             // 
-            this.colSOLUONG.Caption = "Số lượng";
-            this.colSOLUONG.FieldName = "SOLUONG";
-            this.colSOLUONG.Name = "colSOLUONG";
-            this.colSOLUONG.Visible = true;
-            this.colSOLUONG.VisibleIndex = 1;
-            // 
-            // colDONGIA
-            // 
-            this.colDONGIA.Caption = "Đơn giá";
-            this.colDONGIA.FieldName = "DONGIA";
-            this.colDONGIA.Name = "colDONGIA";
-            this.colDONGIA.Visible = true;
-            this.colDONGIA.VisibleIndex = 2;
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DONGIA";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Đơn giá";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // frmPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 700);
-            this.Controls.Add(this.gcCTPN);
+            this.ClientSize = new System.Drawing.Size(1166, 762);
+            this.Controls.Add(this.cTPNDataGridView);
             this.Controls.Add(this.gbPN);
             this.Controls.Add(this.gcPN);
             this.Controls.Add(this.gbChinhanh);
@@ -625,8 +615,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAYPN.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAYPN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTPN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCTPN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,14 +661,13 @@
         private System.Windows.Forms.TextBox txtMAPN;
         private DSTableAdapters.CTPNTableAdapter cTPNTableAdapter;
         private System.Windows.Forms.BindingSource bdsCTPN;
-        private DevExpress.XtraGrid.GridControl gcCTPN;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
-        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbThongbao;
         private System.Windows.Forms.ComboBox cmbMANV;
         private System.Windows.Forms.ComboBox cmbMAKHO;
+        private System.Windows.Forms.DataGridView cTPNDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

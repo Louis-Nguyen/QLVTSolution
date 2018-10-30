@@ -20,7 +20,6 @@ namespace QLVT_D15CP
         {
             InitializeComponent();
             gbPN.Enabled = false;
-            gcCTPN.Enabled = false;
         }
         public void LoadDataToComboBox()
         {
@@ -193,28 +192,56 @@ namespace QLVT_D15CP
 
         private void btnXoaPN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
-                string maPN = ((DataRowView)bdsPN[bdsPN.Position])["MAPN"].ToString();
+            for(int i =0;i< cTPNDataGridView.Rows.Count; i++)
+            {
+                string strLenh = "DECLARE @return_value int EXEC @return_value = [dbo].[SP_LAYSLTTHEOMAVT] N'" + cTPNDataGridView.Rows[i].Cells[0].Value.ToString() + "' SELECT  'Return Value' = @return_value";
+                SqlDataReader myreader = Program.ExecSqlDataReader(strLenh);
+                if (myreader == null) return;
+                myreader.Read();
+                int SLT = myreader.GetInt32(0);
+                myreader.Close();
+                int SLT_REMOVE = SLT - int.Parse(cTPNDataGridView.Rows[i].Cells[1].Value.ToString());
+                if (SLT_REMOVE < 0)
+                {
+                    MessageBox.Show("Phiếu nhập không thể xóa vì SLT sau khi xóa < 0 !", "Lỗi xóa phiếu", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+                string MasoPN = ((DataRowView)bdsPN[bdsPN.Position])["MAPN"].ToString();
                 if (MessageBox.Show("Bạn có thật sự muốn xóa phiếu nhập này ?? ", "Xác nhận",
                        MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
 
                     try
                     {
+                        int row = cTPNDataGridView.Rows.Count;
+                        for (int i = 0; i < row; i++)
+                        {
+                            String strLenhCapnhatSLT = "DECLARE	@return_value int EXEC @return_value = [dbo].[SP_GIAMSLT]  N'" + cTPNDataGridView.Rows[0].Cells[0].Value.ToString() + "'," + int.Parse(cTPNDataGridView.Rows[0].Cells[1].Value.ToString()) + "SELECT  'Return Value' = @return_value";
+                            Program.ExecSqlDataReader(strLenhCapnhatSLT);
+                            Program.conn.Close();
+                            cTPNDataGridView.Rows.RemoveAt(0);
+                        }
                         bdsPN.RemoveCurrent();
-                        this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.phieuNhapTableAdapter.Update(this.dS.PhieuNhap);
+                        if (dS.HasChanges())
+                        {
+                            this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+                            this.cTPNTableAdapter.Update(this.dS.CTPN);
+                            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+                            this.phieuNhapTableAdapter.Update(this.dS.PhieuNhap);
+                        }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Lỗi xóa phiếu nhập. Bạn hãy xóa lại\n" + ex.Message, "",
                             MessageBoxButtons.OK);
                         this.phieuNhapTableAdapter.Fill(this.dS.PhieuNhap);
-                        bdsPN.Position = bdsPN.Find("MAPN", maPN);
+                        bdsPN.Position = bdsPN.Find("MAPN", MasoPN);
                         return;
                     }
                 }
             
+
         }
 
         private void cmbMANV_SelectedIndexChanged(object sender, EventArgs e)

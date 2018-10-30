@@ -45,7 +45,6 @@
             this.btnUndoDDH = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefreshDDH = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoatDDH = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -81,11 +80,10 @@
             this.btnXoaDDH = new DevExpress.XtraBars.BarButtonItem();
             this.bdsCTDDH = new System.Windows.Forms.BindingSource(this.components);
             this.cTDDHTableAdapter = new QLVT_D15CP.DSTableAdapters.CTDDHTableAdapter();
-            this.cTDDHGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cTDDHDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tENCNLabel = new System.Windows.Forms.Label();
             masoDDHLabel = new System.Windows.Forms.Label();
             nhaCCLabel = new System.Windows.Forms.Label();
@@ -104,8 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAY.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAY.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTDDH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tENCNLabel
@@ -165,8 +162,7 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar3});
+            this.bar1});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -182,7 +178,6 @@
             this.btnCTDDH,
             this.btnXoa});
             this.barManager1.MaxItemId = 10;
-            this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
             // 
@@ -256,18 +251,6 @@
             this.btnThoatDDH.Name = "btnThoatDDH";
             this.btnThoatDDH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatDDH_ItemClick);
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -280,9 +263,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 650);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 606);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1182, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1182, 0);
             // 
             // barDockControlLeft
             // 
@@ -290,7 +273,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 59);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 591);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 547);
             // 
             // barDockControlRight
             // 
@@ -298,7 +281,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1182, 59);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 591);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 547);
             // 
             // btnCTDDH
             // 
@@ -470,7 +453,7 @@
             this.gbDDH.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbDDH.Location = new System.Drawing.Point(0, 323);
             this.gbDDH.Name = "gbDDH";
-            this.gbDDH.Size = new System.Drawing.Size(657, 327);
+            this.gbDDH.Size = new System.Drawing.Size(657, 283);
             this.gbDDH.TabIndex = 6;
             this.gbDDH.TabStop = false;
             this.gbDDH.Text = "Thông tin đơn đặt hàng";
@@ -579,61 +562,52 @@
             // 
             this.cTDDHTableAdapter.ClearBeforeFill = true;
             // 
-            // cTDDHGridControl
+            // cTDDHDataGridView
             // 
-            this.cTDDHGridControl.DataSource = this.bdsCTDDH;
-            this.cTDDHGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cTDDHGridControl.Location = new System.Drawing.Point(657, 323);
-            this.cTDDHGridControl.MainView = this.gridView2;
-            this.cTDDHGridControl.MenuManager = this.barManager1;
-            this.cTDDHGridControl.Name = "cTDDHGridControl";
-            this.cTDDHGridControl.Size = new System.Drawing.Size(525, 327);
-            this.cTDDHGridControl.TabIndex = 10;
-            this.cTDDHGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.cTDDHDataGridView.AllowUserToAddRows = false;
+            this.cTDDHDataGridView.AutoGenerateColumns = false;
+            this.cTDDHDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cTDDHDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.cTDDHDataGridView.DataSource = this.bdsCTDDH;
+            this.cTDDHDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cTDDHDataGridView.Enabled = false;
+            this.cTDDHDataGridView.Location = new System.Drawing.Point(657, 323);
+            this.cTDDHDataGridView.Name = "cTDDHDataGridView";
+            this.cTDDHDataGridView.RowTemplate.Height = 24;
+            this.cTDDHDataGridView.Size = new System.Drawing.Size(525, 283);
+            this.cTDDHDataGridView.TabIndex = 14;
             // 
-            // gridView2
+            // dataGridViewTextBoxColumn2
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAVT,
-            this.colSOLUONG,
-            this.colDONGIA});
-            this.gridView2.GridControl = this.cTDDHGridControl;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView2.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MAVT";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mã vật tư";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // colMAVT
+            // dataGridViewTextBoxColumn3
             // 
-            this.colMAVT.Caption = "Mã vật tư";
-            this.colMAVT.FieldName = "MAVT";
-            this.colMAVT.Name = "colMAVT";
-            this.colMAVT.OptionsColumn.AllowEdit = false;
-            this.colMAVT.Visible = true;
-            this.colMAVT.VisibleIndex = 0;
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SOLUONG";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Số lượng";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // colSOLUONG
+            // dataGridViewTextBoxColumn4
             // 
-            this.colSOLUONG.Caption = "Số lượng";
-            this.colSOLUONG.FieldName = "SOLUONG";
-            this.colSOLUONG.Name = "colSOLUONG";
-            this.colSOLUONG.Visible = true;
-            this.colSOLUONG.VisibleIndex = 1;
-            // 
-            // colDONGIA
-            // 
-            this.colDONGIA.Caption = "Đơn giá";
-            this.colDONGIA.FieldName = "DONGIA";
-            this.colDONGIA.Name = "colDONGIA";
-            this.colDONGIA.Visible = true;
-            this.colDONGIA.VisibleIndex = 2;
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DONGIA";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Đơn giá";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // frmDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 675);
-            this.Controls.Add(this.cTDDHGridControl);
+            this.ClientSize = new System.Drawing.Size(1182, 606);
+            this.Controls.Add(this.cTDDHDataGridView);
             this.Controls.Add(this.gbDDH);
             this.Controls.Add(this.gcDDH);
             this.Controls.Add(this.gbChinhanh);
@@ -661,8 +635,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAY.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNGAY.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTDDH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,7 +645,6 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -711,14 +683,13 @@
         private System.Windows.Forms.Label txtThongbao;
         private System.Windows.Forms.BindingSource bdsCTDDH;
         private DSTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
-        private DevExpress.XtraGrid.GridControl cTDDHGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
-        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
         private DevExpress.XtraBars.BarButtonItem btnXoa;
         private System.Windows.Forms.ComboBox cmbMANV;
         private System.Windows.Forms.TextBox txtMAKHODDH;
         private System.Windows.Forms.ComboBox cmbMAKHO;
+        private System.Windows.Forms.DataGridView cTDDHDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
